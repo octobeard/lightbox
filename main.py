@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
@@ -9,7 +10,9 @@ app.config['DEBUG'] = True
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    import urllib2
+    cats = urllib2.urlopen("http://thecatapi.com/api/images/get?format=html&results_per_page=20").read()
+    return cats
 
 
 @app.errorhandler(404)
