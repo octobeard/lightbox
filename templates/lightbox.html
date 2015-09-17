@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Lightbox</title>
+    <link rel="stylesheet" href="static/css/lightbox.css" type="text/css"/>
 </head>
 <body>
-{% for image in images %}
-  {{ image.url }}
-{% endfor %}
+<div id="lightbox-gallery"></div>
+<script type="text/javascript">
+    var images = [
+    {% for image in images %}
+        {
+            id: "{{ image.id }}",
+            url: "{{ image.url }}",
+            source_url: "{{ image.source_url }}"
+        },
+    {% endfor %}
+    ];
+</script>
+<script type="text/javascript" src="static/js/lightbox.js"></script>
 </body>
 </html>
