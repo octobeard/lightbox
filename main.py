@@ -6,10 +6,6 @@ from flask import Flask, render_template
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-# Note: We don't need to call run() since our application is embedded within
-# the App Engine WSGI application server.
-
-
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
@@ -18,8 +14,8 @@ def hello():
     images = []
     for image in root[0][0].getchildren():
         json = {
-            'url': image.find('url').text,
-            'id': image.find('id').text,
+            'url':        image.find('url').text,
+            'id':         image.find('id').text,
             'source_url': image.find('source_url').text
         }
         images.append(json)
@@ -30,4 +26,4 @@ def hello():
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""
-    return 'Sorry, nothing at this URL.', 404
+    return render_template("404.html")
