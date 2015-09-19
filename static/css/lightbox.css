@@ -10,13 +10,15 @@
 }
 
 .gallery-image {
-    float:left;
-    outline:1px solid #5555ff;
-    height:176px;
-    width:250px;
-    margin-right:10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    float: left;
+    height: 176px;
+    width: 250px;
+    margin-right: 10px;
     margin-bottom: 10px;
-    overflow:hidden;
+    overflow: hidden;
     background-color: black;
     cursor: pointer;
 }
@@ -28,7 +30,7 @@
 }
 
 .image-footer {
-    background-color: #5555ff;
+    background-color: #446699;
     color: white;
     font-family: sans-serif;
     font-size: 0.9em;
@@ -53,8 +55,6 @@
 }
 
 .lightbox-image {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
     display: block;
     height: 500px;
     margin-left: auto;
@@ -62,11 +62,61 @@
     position: relative;
     top: 50px;
     width: 600px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
 }
 
 .lightbox-image img {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    box-sizing: border-box;
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 350px;
+}
+
+.text-footer {
+    color: #eee;
+    font-size: 30px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.text-footer .left-link {
+    float: left;
+    margin-left: 60px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.text-footer .right-link {
+    margin-right: 60px;
+    float: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #eee;
+}
+
+a:visited {
+    color: #eee;
+}
+
+a:hover {
+    color: #ff11bb;
+}
+
+a:active {
+    color: #eee;
 }
